@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}Профиль{% endblock %}
+
+{% block content %}
+<div class="container mt-1">
+    <div class="text-center mb-4">
+        {% if user.profile.photo %}
+            <img src="{{ user.profile.photo.url }}" alt="Профиль" class="img-fluid rounded-circle" width="150">
+        {% else %}
+            <img src="{% static 'images/def_profile.jpg' %}" alt="Профиль" class="img-fluid rounded-circle" width="150">
+        {% endif %}
+    </div>
+
+    <h2 class="text-center mb-4">Информация о профиле</h2>
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Логин:</strong> {{user.username}}</li>
+                <li class="list-group-item"><strong>Имя:</strong> {{user.first_name}}</li>
+                <li class="list-group-item"><strong>Фамилия:</strong> {{user.last_name}}</li>
+                <li class="list-group-item"><strong>Город:</strong> {{user.profile.city}}</li>
+                <li class="list-group-item"><strong>Дата рождения:</strong> {{ user.profile.birth}} </li>
+                <li class="list-group-item"><strong>О себе:</strong> {{user.profile.bio}}</li>
+            </ul>
+        </div>
+        <a class="btn btn-warning" style="margin-top: 20px;" href="{% url 'edit_profile' %}">Редактировать</a>
+        <a class="btn btn-warning" style="margin-top: 20px;" href="{% url 'change_password' %}">Изменить пароль</a>
+        <a class="btn btn-warning" style="margin-top: 20px;" href="{% url 'change_email' %}">Изменить email</a>
+        <a class="btn btn-warning" style="margin-top: 20px;" href="{% url 'change_login' %}">Изменить логин</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base_template.html" %}
+{% load static %}
+{% block title %}Login{% endblock title %}
+{%block body_page %}
+{% filter force_escape|lower %}
+    This text will be HTML-escaped, and will appear in all lowercase.
+{% endfilter %}
+<ul>
+    {% for el in data_db %}
+        <li>
+            <h2>{{ el.id }}.{{el.login}}</h2>
+            <p>Email: {{el.email}}</p>
+            <p>Password: {{el.password}}</p>
+<!--            {% if el.id != data_db|length %}-->
+<!--                <hr>-->
+<!--            {% endif %}-->
+            {% if el != data_db.last %}
+                <hr>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock body_page %}

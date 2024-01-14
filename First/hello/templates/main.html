@@ -1,0 +1,13 @@
+{% extends "base_template.html" %}
+{% load static %}
+{% block title %}Main{% endblock title %}
+
+{#{% block menu %}#}
+{#    <p>Welcome {{ name }}</p>#}
+{#{% endblock menu %}#}
+
+{% block user %}<div class="username">Hello {{ name }}</div>{% endblock user %}
+{%block body_page %}
+<h1>WELCOME!</h1>
+
+{% endblock body_page %}

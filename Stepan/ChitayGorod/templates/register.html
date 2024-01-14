@@ -1,0 +1,63 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Регистрация
+{% endblock %}
+
+{% block content %}
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="text-center">Регистрация</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                      {% csrf_token %}
+                        {{ form.username.label }}
+                        {{ form.username }}
+                        {{ form.email.label }}
+                        {{ form.email }}
+                        {{ form.password.label }}
+                        {{ form.password }}
+                        <ul>
+                            <li>Ваш пароль должен содержать как минимум 8 символов.</li>
+                            <li>Ваш пароль должен содержать специальные символы (!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~).</li>
+                            <li>Ваш пароль должен содержать как минимум 1 букву верхнего регистра.</li>
+                        </ul>
+                        {{ form.password2.label }}
+                        {{ form.password2 }}
+{#                        {% for field in form %}#}
+{#                            <div class="form-group">#}
+{#                                {{ field.label }}#}
+{#                                {{ field }}#}
+{#                            </div>#}
+
+                        {{ form.errors }}
+                        <input type="submit" class="btn btn-primary btn-block" style="margin-top: 20px;" value="Войти">
+
+                    </form>
+                    <a href="{% url 'login' %}" style="text-decoration: none; margin-top: 30px;">У вас уже есть аккаунт?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{#<div class="cont">#}
+{#    <form class="reg" method="post">#}
+{#        {% csrf_token %}#}
+{#        {{ form.username }}#}
+{#        {{ form.email }}#}
+{#        {{ form.password1 }}#}
+{#        <ul>#}
+{#            <li>Ваш пароль должен содержать как минимум 8 символов.</li>#}
+{#            <li>Ваш пароль должен содержать специальные символы (!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~).</li>#}
+{#            <li>Ваш пароль должен содержать как минимум 1 букву верхнего регистра.</li>#}
+{#        </ul>#}
+{#        {{ form.password2 }}#}
+{#        <p><button type="submit">Зарегистрироваться</button></p>#}
+{#    </form>#}
+{#</div>#}
+
+{% endblock %}

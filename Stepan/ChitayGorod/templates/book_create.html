@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block title %}Добавление книги{% endblock %}
+
+{% block content %}
+  <div class="container" style="margin-top: -10px;">
+    <h1 class="mt-1">Добавить книгу</h1>
+    <form method="post" enctype="multipart/form-data" class="mt-4">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary">Сохранить</button>
+    </form>
+  </div>
+{% endblock %}

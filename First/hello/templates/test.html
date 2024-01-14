@@ -1,0 +1,13 @@
+{% extends "base_template.html" %}
+{% load static %}
+{% load hello_tags %}
+{% block css %}<link rel="stylesheet" href="{% static "css/test.css" %}"/> {% endblock css %}
+{% block title %}Login{% endblock title %}
+{%block body_page %}
+    <form>
+      <h2>Авторизация</h2>
+      <input type="text" placeholder="Имя пользователя" required>
+      <input type="password" placeholder="Пароль" required>
+      <button type="submit">Войти</button>
+</form>
+{% endblock body_page %}

@@ -1,0 +1,23 @@
+{% extends "base_template.html" %}
+{% load static %}
+{% block title %}Login{% endblock title %}
+{% block body_page %}
+
+    <div class="form">
+        <h1>АВТОРИЗАЦИЯ</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            {{ form }}
+
+            <button class="glow-on-hover" type="submit">Войти</button>
+
+        </form>
+        <div class="help">
+            <a href="{% url 'registration' %}">У вас еще своего аккаунта?</a>
+            <a href="#">Забыли пароль?</a>
+        </div>
+
+    </div>
+{% endblock body_page %}

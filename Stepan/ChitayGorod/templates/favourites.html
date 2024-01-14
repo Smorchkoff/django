@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block title %}Избранное{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>Избранные книги</h1>
+    <ul>
+        {% for book in favorite_books %}
+        <a href="{% url 'main:book' book_id=book.id %}"><li style="list-style:none">{{ book.title }}</li></a>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

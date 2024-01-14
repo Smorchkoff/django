@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title%}Авторы{% endblock %}
+
+{% block content %}
+<div class="features">
+    <h1>Авторы</h1>
+    <ul class="book-list">
+    {% for author in authors %}
+         <li class="item">
+            <div class="title"><a href="{% url 'author' author_id=author.id %}">{{ author.name }}</a></div>
+         </li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,9 @@
+ {% for el in db %}
+            <li>
+                {% if el.id == selected %}
+                    <p class="selected">{{ el.login }}</p>
+                {% else %}
+                    <p>{{ el.login }}</p>
+                {% endif %}
+            </li>
+    {% endfor %}

@@ -1,0 +1,31 @@
+@font-face {
+        font-family: "Gropled";
+        src: url("../fonts/Gropled-Bold.otf") format("opentype"),
+        url("../fonts/Gropled-Bold.otf") format("opentype");
+        }
+
+.logo {
+    color: #0096ff;
+    font-family: Gropled, Roboto Thin, sans-serif;
+    font-size: 40px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5)
+}
+
+.cont {
+  width: 500px;
+  clear: both;
+}
+
+.cont input {
+  width: 100%;
+  clear: both;
+}
+
+.form-reg:invalid {
+    background: #ffdddd;
+         }
+
+
+.errorlist {
+    color:red;
+}

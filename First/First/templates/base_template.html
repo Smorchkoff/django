@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title%}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}"/>
+</head>
+<body>
+<div class="page">
+<header>
+    <div class="header">
+<!--        <div class="logo">-->
+<!--            <img src="{% static  "images/logo.png"%}" height=150 width=150>-->
+<!--        </div>-->
+        <div class="menu">
+            <ul>
+                <li><a href="#">На главную</a></li>
+                <li>|</li>
+                <li><a href="#">О нас</a></li>
+                <li>|</li>
+                <li><a href="{% url 'login' %}">Войти</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+    {%block body_page%}<h1>Something..</h1>{% endblock body_page %}
+<footer>
+    <div id="socials">
+        <a href="https://vk.com/extazyice" title="Страница ВК">
+            <img src="{% static "images/vk_icon.png" %}" alt="Страница ВК" title="Страница ВК"></a>
+        <a href="https://t.me/extazyice" title="Чат Телеграмм">
+            <img src="{% static "images/telegram_icon.png" %}" alt="Чат Телеграмм" title="Чат Телеграмм">
+        </a>
+    </div>
+
+    <div id="rights">
+        Все права защищены &copy; <?=date ('Y')?>
+    </div>
+</footer>
+</div>
+</body>
+</html>

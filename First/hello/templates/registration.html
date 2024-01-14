@@ -1,0 +1,17 @@
+{% extends "base_template.html" %}
+{% load static %}
+{% block title %}Reg{% endblock title %}
+{% block body_page %}
+    <div class="form">
+        <h1>Регистрация</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            {{ form }}
+
+            <button class="glow-on-hover" type="submit">Войти</button>
+
+        </form>
+    </div>
+{% endblock body_page %}
